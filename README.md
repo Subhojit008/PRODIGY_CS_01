@@ -14,8 +14,8 @@ A simple command-line Caesar Cipher tool written in Python. Supports encryption,
 1. Clone the repository
 ```bash
 git clone https://github.com/your-username/caesar_cipher_project.git
-cd caesar_cipher_project
-python caesar_cipher.py
+cd PRODIGY_CS_01
+python Task_01_PY
 💡 Example
 Input:
 Message: Hello World!
@@ -23,4 +23,5 @@ Shift: 3
 
 Encrypted: Khoor Zruog!
 Decrypted: Hello World!
+
 
