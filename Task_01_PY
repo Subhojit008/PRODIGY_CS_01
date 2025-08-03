@@ -1,0 +1,39 @@
+def encrypt(text, shift):
+    result = ""
+    for char in text:
+        if char.isalpha():
+            start = ord('A') if char.isupper() else ord('a')
+            shifted_char = chr((ord(char) - start + shift) % 26 + start)
+            result += shifted_char
+        else:
+            result += char  # Leave non-alphabet characters unchanged
+    return result
+
+def decrypt(text, shift):
+    return encrypt(text, -shift)  # Decryption is reverse shift
+
+def main():
+    print("==== Caesar Cipher ====")
+    while True:
+        choice = input("\nChoose an option:\n1. Encrypt\n2. Decrypt\n3. Exit\nYour choice: ")
+
+        if choice == "1":
+            message = input("Enter the message to encrypt: ")
+            shift = int(input("Enter the shift value (e.g., 3): "))
+            encrypted = encrypt(message, shift)
+            print(f"Encrypted Message: {encrypted}")
+
+        elif choice == "2":
+            message = input("Enter the message to decrypt: ")
+            shift = int(input("Enter the shift value (e.g., 3): "))
+            decrypted = decrypt(message, shift)
+            print(f"Decrypted Message: {decrypted}")
+
+        elif choice == "3":
+            print("Exiting Caesar Cipher Tool. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+if __name__ == "__main__":
+    main()
